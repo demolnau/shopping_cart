@@ -1,12 +1,14 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+
+.navigationBar{
+  display:flex;
+  justify-content: space-between;
+  background-color: rgba(0,0,0,0.5);
 }
-.shoppingContainer{
-  background-color: #C0BECC;
+.rightNavigationBar{
+  display: flex;
+  align-items: center;
 }
+
 .shoppingGrid{
   display: flex;
   gap:20px;
@@ -17,11 +19,64 @@
   display:flex;
   flex-direction: column;
   background-color: #496165;
-  
+  padding:20px;
 }
 
-.itemImageContainer{
+.itemContainer{
   display: flex;
-  width: fit-content;
-  padding:20px;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 50px;
+}
+.itemDetails{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.itemDetails .itemPrice{
+  color: green;
+  font-size: larger;
+  padding-bottom: 10px;
+}
+.btnBack{
+  margin-top:20px;
+  padding:5px;
+}
+.itemDetails .line{
+  border-bottom: 5px solid grey;
+  margin-top: 20px;
+  width: 90%;
+}
+
+.itemInfo, .itemInfo:visited{
+  color: white;
+  text-decoration: none;
+}
+
+.itemInfo:hover{
+  color: #C198B8;
+}
+
+
+
+.itemImageContainer{
+  position: relative;
+}
+.itemImageContainer::after{
+  content:"";
+  display: block;
+}
+
+.itemThumb{
+  display: absolute;
+  width:250px;
+  height: 250px;
+  object-fit: cover;
+}
+
+.itemImage{
+  display: absolute;
+  width:500px;
+  height: 500px;
+  object-fit: cover;
 }

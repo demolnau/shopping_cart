@@ -4,6 +4,7 @@ import App from "./App";
 import ErrorPage from "./ErrorPage";
 import itemData from "./Components/itemData.js"
 import Profile from "./Profile";
+import ShoppingCart from "./Components/ShoppingCart";
 
 const Router = function(){
   const [data]=useState(itemData)
@@ -22,6 +23,12 @@ const Router = function(){
       }
     )
     })
+    routes.push(
+      {
+        path:"shoppingCart",
+        element:<ShoppingCart/>
+      }
+    )
   const router = createBrowserRouter(routes)
   return <RouterProvider router={router} />
 }

@@ -4,11 +4,11 @@ const Item = function({item}){
     return (
       <Link className="shopItem" to={item.path}>
         <div className="itemImageContainer">
-            <img src={item.image} alt={item.name} className="itemImage" />
+            <img src={item.image} alt={item.name} className="itemThumb" />
         </div>
-        <div className="item.info">
+        <div className="itemInfo">
             <p className="itemName">{item.name}</p>
-            <p className="itemPrice">`{item.price}`</p>
+            <p className="itemPrice">{item.price}</p>
         </div>
       </Link>
     );
