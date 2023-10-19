@@ -1,16 +1,19 @@
-import { Outlet } from "react-router-dom";
 
-const Profile = () => {
+const Profile= function(props){
+   const {item} = props
+  console.log(item)
   return (
     <div>
-      <h1>Hello from profile page!</h1>
-      <p>So, how are you?</p>
-      <hr />
-      <h2>The profile visited is here:</h2>
-      <Outlet />
+        <div className="itemImageContainer">
+            <img src={item.image} alt={item.name} className="itemImage" />
+        </div>
+        <div className="itemInfo">
+            <p className="itemName">{item.name}</p>
+            <p className="itemPrice">`{item.price}`</p>
+        </div>
+        <p className="itemDescription">{item.description}</p>
     </div>
   );
-};
-
+}
 
 export default Profile;

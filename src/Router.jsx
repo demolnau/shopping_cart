@@ -1,30 +1,29 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {useState} from "react"
 import App from "./App";
-import Profile from "./Profile";
 import ErrorPage from "./ErrorPage";
-import Spinach from "./Components/Spinach";
-import Popeye from "./Components/Popeye";
-import DefaultProfile from "./DefaultProfile";
+import itemData from "./Components/itemData.js"
+import Profile from "./Profile";
 
-const Router = () => {
+const Router = function(){
+  const [data]=useState(itemData)
+  const routes =[{
+    path:"/",
+    element:<App />, 
+    errorElement:<ErrorPage />
+  }]
+  data.map((item)=>{
+    routes.push(
+      {
+        path: `${item.path}`,
+        Component: () => (
+          <Profile item={item} key={item.id}/>
+          )
+      }
+    )
+    })
+  const router = createBrowserRouter(routes)
+  return <RouterProvider router={router} />
+}
 
-    const router = createBrowserRouter([
-        {
-          path: "/",
-          element: <App />,
-          errorElement: <ErrorPage />
-        },
-        {
-          path: "/profile",
-          element: <Profile />,
-          children: [
-            { index: true, element: <DefaultProfile />},
-            {path: "spinach", element:<Spinach />},
-            {path: "popeye", element: <Popeye />},
-          ],
-        },
-      ]);
-
-  return <RouterProvider router={router} />;
-};
-export default Router;
+ export default Router;
