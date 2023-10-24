@@ -2,9 +2,11 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import {useState} from "react"
 import App from "./App";
 import ErrorPage from "./ErrorPage";
-import itemData from "./Components/itemData.js"
-import Profile from "./Profile";
-import ShoppingCart from "./Components/ShoppingCart";
+import itemData from "./assets/data/itemData"
+import ProductPage from "./Components/ProductPage";
+import HomePage from "./Components/HomePage";
+import ShoppingCartPage from "./Components/ShoppingCartPage";
+import ShopPage from "./Components/ShopPage";
 
 const Router = function(){
   const [data]=useState(itemData)
@@ -18,17 +20,30 @@ const Router = function(){
       {
         path: `${item.path}`,
         Component: () => (
-          <Profile item={item} key={item.id}/>
+          <ProductPage item={item} key={item.id}/>
           )
       }
     )
     })
     routes.push(
       {
-        path:"shoppingCart",
-        element:<ShoppingCart/>
+        path:"/homePage",
+        element:<HomePage />
       }
     )
+    routes.push(
+      {
+        path:"/shoppingCartPage",
+        element:<ShoppingCartPage/>
+      }
+    )
+    routes.push(
+      {
+        path:"/shopPage",
+        element: <ShopPage />
+      }
+    )
+
   const router = createBrowserRouter(routes)
   return <RouterProvider router={router} />
 }

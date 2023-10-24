@@ -1,17 +1,19 @@
 import { Link } from "react-router-dom";
+import "../styles/NavigationBar.styles.css"
+
 const NavigationBar = function(){
     return(
         <div className="navigationBar">
-            <h1> Mini Shopping Site</h1>
+            <h1> <Link className="HomePage" to="/">Mini Shopping Site</Link></h1>
             <nav className="rightNavigationBar">
-                <Link className="shoppingPage" to="shoppingPage">Shop</Link>
+                <Link className="shopPage" to="/shopPage">Shop</Link>
                 <Link className="searchIcon" to="searchPage">
-                    <span class="material-symbols-outlined">
+                    <span className="material-symbols-outlined">
                         search
                     </span>
                 </Link>
-                <Link className="shoppingCart" to="/shoppingCart">
-                    <span class="material-symbols-outlined">
+                <Link className="shoppingCartPage" to="/shoppingCartPage">
+                    <span className="material-symbols-outlined">
                         shopping_cart
                     </span>
                 </Link>

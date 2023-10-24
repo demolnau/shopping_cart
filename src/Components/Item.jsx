@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import "../styles/Item.styles.css"
 //import React from "react";
 const Item = function({item}){
     return (
@@ -8,7 +9,7 @@ const Item = function({item}){
         </div>
         <div className="itemInfo">
             <p className="itemName">{item.name}</p>
-            <p className="itemPrice">{item.price}</p>
+            <p className="itemPrice">{item.currency}{item.price}</p>
         </div>
       </Link>
     );

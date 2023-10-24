@@ -1,0 +1,22 @@
+
+.itemContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 50px;
+  }
+  .itemDetails{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .itemDetails .itemPrice{
+    color: green;
+    font-size: larger;
+    padding-bottom: 10px;
+  }
+  .btnBack{
+    margin-top:20px;
+    padding:5px;
+  }
+  

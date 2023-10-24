@@ -1,0 +1,43 @@
+.shopItem{
+    display:flex;
+    flex-direction: column;
+    background-color: #496165;
+    padding:20px;
+  }
+
+  .itemDetails .line{
+    border-bottom: 5px solid grey;
+    margin-top: 20px;
+    width: 90%;
+  }
+  
+  .itemInfo, .itemInfo:visited{
+    color: white;
+    text-decoration: none;
+  }
+  
+  .itemInfo:hover{
+    color: #C198B8;
+  }
+  
+  .itemImageContainer{
+    position: relative;
+  }
+  .itemImageContainer::after{
+    content:"";
+    display: block;
+  }
+  
+  .itemThumb{
+    display: absolute;
+    width:250px;
+    height: 250px;
+    object-fit: cover;
+  }
+  
+  .itemImage{
+    display: absolute;
+    width:500px;
+    height: 500px;
+    object-fit: cover;
+  }

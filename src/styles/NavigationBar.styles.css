@@ -1,0 +1,11 @@
+
+.navigationBar{
+    display:flex;
+    justify-content: space-between;
+    background-color: rgba(0,0,0,0.5);
+  }
+  .rightNavigationBar{
+    display: flex;
+    align-items: center;
+  }
+  
