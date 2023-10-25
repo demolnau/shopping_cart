@@ -37,65 +37,20 @@ const ShoppingCartItem = function({item, increaseCount, decreaseCount}){
 }
 const ShoppingCartPage = function({cart, increaseCount, decreaseCount}){
     const navigate = useNavigate();
-    // const increaseCount= function(item){
-    //     const newCart = cart.map((product)=>{
-    //         if(product.item.name!=item.item.name){
-    //             return product
-    //         }else{
-    //             return(
-    //                 {
-    //                     ...product,
-    //                     quantity: product.quantity +1
-    //                 }
-    //             )
-    //         }
-    //     })
-    //     setCart(newCart)   
-    // }
-    
-    // const deleteFromCart = function(item){
-    //     const newCart = cart.filter((product)=>{
-    //         return(product.id!=item.id)
-    //     })
-    //     setCart(newCart)
-    //     //console.log(newCart)
-    // }
-    
-    // const decreaseCount = function(item){
-    //     if(item.quantity==1){
-    //         deleteFromCart(item)
-    //     }
-    //     else{
-    //         const newCart = cart.map((product)=>{
-    //             if(product.item.name!=item.item.name){
-    //                 return product
-    //             }else{
-    //                 if(product.quantity>1){
-    //                     return(
-    //                         {
-    //                             ...product,
-    //                             quantity: product.quantity-1
-    //                         }
-    //                     )
-    //                 }
-    //             }
-    //         })
-    //         setCart(newCart)  
-    //     }
-    // }
-
     const getTotal = function(){
         var total = 0
         cart.map((item)=>{
             //total = total + Number(item.item.price)
             if(item.item.currency == "\u20AC"){
                 total = total + ((Number(item.item.price)*1.0589)* item.quantity )
-                total =  total.toFixed(2)
+                
             }
             else{
                 total = total + (Number(item.item.price)*item.quantity)
+                
             }
         })
+        total =  total.toFixed(2)
         return total
     }
 
