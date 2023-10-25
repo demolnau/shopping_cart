@@ -3,21 +3,21 @@ import uniqid from 'uniqid'
 const useShoppingCart = function(item){
     const [cart, setCart] = useState([])
     const addItemtoCart=function(item){
-      var item_to_add = item.item
+        var item_to_add = item.item
+        var item_type_in_cart = false
         if(cart.length==0){
-          // const product = {item:{item_to_add}, quantity: 1, id: uniqid()}
-          // setCart({product})
-          setCart([{item:{item_to_add}, quantity: 1, id: 0}])
+          setCart([{item:{item_to_add}, quantity: 1, id: uniqid()}])
           console.log("cart now has something in it")
         }
         else{
           // cart.map((product)=>{
           //   if(product.item.item_to_add.name==item.item.name){
-          //           console.log("Item is already in list!!")
+          //           item_type_in_cart=true
+          //           console.log(``)
           //   }
           // }
 
-          // )
+          //)
           
           setCart(
             [
@@ -57,6 +57,7 @@ const useShoppingCart = function(item){
     console.log(cart)    
     return cart
   }
+  
   const removeItemfromCart = function(item){
     console.log(item.item.name)
     if(cart.length>0){

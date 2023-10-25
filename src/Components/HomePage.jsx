@@ -3,6 +3,8 @@ import itemData from "../assets/data/itemData"
 import React, { useState, useEffect } from "react";
 import "../styles/HomePage.styles.css"
 //import NavigationBar from "./NavigationBar"
+
+
 const HomePage = function(){
     const [data]=useState(itemData)
     const getFeatured = function(){

@@ -8,7 +8,8 @@ const itemData = [
     {
         name:"plum quilted jacket",
         path: "/productPage/plum_quilted_jacket",
-        price: "$300",
+        currency:"$",
+        price: "300",
         image: image0,
         description:" A quilted jacket created using the Tamarack pattern by Grainline Studios, sewn by LauraKirbySews ",
         id:0

@@ -6,7 +6,7 @@ import "../styles/ProductPage.styles.css"
 
 const ProductPage= function(props){
   const {item} = props
-  const { addItemtoCart, removeItemfromCart} = useShoppingCart();
+  const {addItemtoCart, removeItemfromCart} = useShoppingCart();
   // const cart = []
   
   // const addItemtoCart=function(){
