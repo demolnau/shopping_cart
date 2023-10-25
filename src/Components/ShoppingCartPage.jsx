@@ -4,20 +4,11 @@ import NavigationBar from "./NavigationBar";
 import { useNavigate } from "react-router-dom";
 //import useShoppingCart from "./useShoppingCart";
 import pretendCart from "../assets/data/pretendCart";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import uniqid from "uniqid"
 import "../styles/ShoppingCartPage.styles.css"
 
-// const images = require.context("../images", true);
-
-// function loadImage(image) {
-//   return images(`./${image}`);
-// }
-
 const ShoppingCartItem = function({item, increaseCount, decreaseCount}){
-    // const {item} = props
-    // const {cart} = props
-    
     return(
         <div className="shoppingCartItem">
             <div className="shoppingCartItemImage">
@@ -44,54 +35,54 @@ const ShoppingCartItem = function({item, increaseCount, decreaseCount}){
         </div>
     )
 }
-const ShoppingCartPage = function(){
-    const [cart,setCart] = useState(pretendCart)
+const ShoppingCartPage = function({cart, increaseCount, decreaseCount}){
     const navigate = useNavigate();
-   
-    const increaseCount= function(item){
-        const newCart = cart.map((product)=>{
-            if(product.item.name!=item.item.name){
-                return product
-            }else{
-                return(
-                    {
-                        ...product,
-                        quantity: product.quantity +1
-                    }
-                )
-            }
-        })
-        setCart(newCart)   
-    }
-
-    const decreaseCount = function(item){
-        if(item.quantity==1){
-            const newCart = cart.filter((product)=>{
-                return(product.id!=item.id)
-            })
-            setCart(newCart)
-            console.log(newCart)
-        }
-        else{
-            const newCart = cart.map((product)=>{
-                if(product.item.name!=item.item.name){
-                    return product
-                }else{
-                    if(product.quantity>1){
-                        return(
-                            {
-                                ...product,
-                                quantity: product.quantity-1
-                            }
-                        )
-                    }
-                }
-            })
-            setCart(newCart)  
-        }
-         
-        
-    }
+    // const increaseCount= function(item){
+    //     const newCart = cart.map((product)=>{
+    //         if(product.item.name!=item.item.name){
+    //             return product
+    //         }else{
+    //             return(
+    //                 {
+    //                     ...product,
+    //                     quantity: product.quantity +1
+    //                 }
+    //             )
+    //         }
+    //     })
+    //     setCart(newCart)   
+    // }
+    
+    // const deleteFromCart = function(item){
+    //     const newCart = cart.filter((product)=>{
+    //         return(product.id!=item.id)
+    //     })
+    //     setCart(newCart)
+    //     //console.log(newCart)
+    // }
+    
+    // const decreaseCount = function(item){
+    //     if(item.quantity==1){
+    //         deleteFromCart(item)
+    //     }
+    //     else{
+    //         const newCart = cart.map((product)=>{
+    //             if(product.item.name!=item.item.name){
+    //                 return product
+    //             }else{
+    //                 if(product.quantity>1){
+    //                     return(
+    //                         {
+    //                             ...product,
+    //                             quantity: product.quantity-1
+    //                         }
+    //                     )
+    //                 }
+    //             }
+    //         })
+    //         setCart(newCart)  
+    //     }
+    // }
 
     const getTotal = function(){
         var total = 0

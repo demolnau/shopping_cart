@@ -1,7 +1,8 @@
+/* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
 import "../styles/NavigationBar.styles.css"
 
-const NavigationBar = function(){
+const NavigationBar = function({quantity}){
     return(
         <div className="navigationBar">
             <h1> <Link className="HomePage" to="/">Mini Shopping Site</Link></h1>
@@ -15,6 +16,11 @@ const NavigationBar = function(){
                 <Link className="shoppingCartPage" to="/shoppingCartPage">
                     <span className="material-symbols-outlined">
                         shopping_cart
+                        {quantity > 0 &&
+                            <span className="quantity_in_cart">
+                                {quantity}
+                            </span>
+                        }
                     </span>
                 </Link>
             </nav>

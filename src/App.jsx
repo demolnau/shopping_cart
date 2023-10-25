@@ -1,22 +1,20 @@
+/* eslint-disable react/prop-types */
 //import { Link } from "react-router-dom";
 //import itemData from "./assets/data/itemData.js"
-import React, { useState, useEffect } from "react";
-import useShoppingCart from "./Components/useShoppingCart";
+import React, { useState, useEffect, useRef } from "react";
+//import ShoppingCartPage from "./Components/ShoppingCartPage";
 import NavigationBar from "./Components/NavigationBar";
 import HomePage from "./Components/HomePage"
+//import pretendCart from "./assets/data/pretendCart";
 import "./App.css"
 
 
 
-const App = function(){
-  //const [data]=useState(itemData)
-  //const {cart, addItemtoCart, removeItemfromCart} = useShoppingCart();
-  
-
-  
+const App = function({quantity}){
   return (
     <div>
-      <NavigationBar></NavigationBar>
+      <NavigationBar
+        quantity={quantity} />
       <HomePage></HomePage>
       
     </div>

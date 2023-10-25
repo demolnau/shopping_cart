@@ -1,47 +1,10 @@
+/* eslint-disable react/prop-types */
 import { useNavigate } from "react-router-dom";
 import NavigationBar from "./NavigationBar";
-import { useState } from "react";
-import useShoppingCart from "./useShoppingCart";
+//import { useState } from "react";
 import "../styles/ProductPage.styles.css"
 
-const ProductPage= function(props){
-  const {item} = props
-  const {addItemtoCart, removeItemfromCart} = useShoppingCart();
-  // const cart = []
-  
-  // const addItemtoCart=function(){
-  //   //var quantity = 0
-  //   if(cart.length==0){
-  //     var quantity = 1;
-  //     cart.push({item, quantity})
-  //   }
-  //   else{
-  //     cart.map((product)=>{
-  //       if(product.item == item){
-  //         product.quantity = product.quantity + 1 
-  //       }
-  //     })
-  //   }
-  //   console.log(cart)
-  //   return cart
-  // }
-
-  // const removeItemfromCart = function(){
-  //   if(cart.length>0){
-  //     cart.map((product)=>{
-  //       if(product.item==item){
-  //         product.quantity = product.quantity - 1
-          
-  //         if(product.quantity==0){
-  //           cart.splice(cart.indexOf(product) ,1)
-  //         }
-  //       }
-  //     })
-  //   }
-  //   console.log(cart)
-  //   return cart
-  // }
- 
+const ProductPage= function({item, increaseCount, decreaseCount}){
   const navigate =useNavigate()
   return (
     <div className="profilePage">
@@ -57,28 +20,13 @@ const ProductPage= function(props){
             <div className="itemDescription">{item.description}</div>
             <div className="line"></div>
 
-
-
-            {/* <div className="addOrRemoveItem">
-              <button className="addToCart" onClick={addItemtoCart}>
-                <span className="material-symbols-outlined">
-                  add_shopping_cart
-                </span>
-              </button>
-              <button className="removeFromcart" onClick={removeItemfromCart}>
-                <span className="material-symbols-outlined">
-                  remove_shopping_cart
-                </span>
-              </button>
-            </div> */}
-
             <div className="addOrRemoveItem">
-              <button className="addToCart" onClick={()=>addItemtoCart({item})}>
+              <button className="addToCart" onClick={()=>increaseCount({item})}>
                 <span className="material-symbols-outlined">
                   add_shopping_cart
                 </span>
               </button>
-              <button className="removeFromcart" onClick={()=>removeItemfromCart({item})}>
+              <button className="removeFromcart" onClick={()=>decreaseCount({item})}>
                 <span className="material-symbols-outlined">
                   remove_shopping_cart
                 </span>
