@@ -19,9 +19,12 @@ const HomePage = function(){
     }
     const featured_array = getFeatured()
     return(
-        <div>
-        <p>Welcome to The Mini Store page where we  practice routing to multiple pages for the first time! Below are possible items that you can add to your shopping cart</p>
-            <div className="shoppingContainer">
+        <div className="homePage">
+        <div className="upperContainer">
+            <p>Welcome to The Mini Store page where we  practice routing to multiple pages for the first time! Below are possible items that you can add to your shopping cart</p>
+        </div>
+        <div className="lowerContainer">
+        <div className="shoppingContainer">
                 <h1 className="featuredItemsHeader">Featured Items</h1>
                 <div className="shoppingGrid">
                     {data.map((item) => {
@@ -34,6 +37,8 @@ const HomePage = function(){
                     }
                 </div>
             </div>
+        </div>
+            
         </div>
     )
 }

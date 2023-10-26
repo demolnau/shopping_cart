@@ -60,8 +60,10 @@ const ShoppingCartPage = function({cart, quantity, increaseCount, decreaseCount}
             <NavigationBar quantity={quantity}></NavigationBar>
             <div className="shoppingCartPage">
                 <h1>Your Cart</h1>
-                <div className="line"></div>
-                <p>You currently have nothing in your cart</p>
+                <div className="shoppingCartContainer">
+                    <p>You currently have nothing in your cart</p>
+                </div>
+                
                 <button onClick={() => navigate(-1)} className="btnBack">Continue Shopping</button>
             </div>
         </>
@@ -73,7 +75,7 @@ const ShoppingCartPage = function({cart, quantity, increaseCount, decreaseCount}
                 <NavigationBar quantity={quantity}></NavigationBar>
                 <div className="shoppingCartPage">
                     <h1>Your Cart</h1>
-                    <div className="line"></div>
+                    <div className="shoppingCartContainer">
                     {
                         cart.map((item)=>{
                             return(
@@ -83,6 +85,8 @@ const ShoppingCartPage = function({cart, quantity, increaseCount, decreaseCount}
                         
                     }
                     <div className="totalContainer"><b>Total: ${getTotal()} </b></div>
+                    </div>
+                    
                     <button onClick={() => navigate(-1)} className="btnBack">Continue Shopping</button>
                 </div>
             </>

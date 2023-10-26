@@ -3,28 +3,38 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    margin-top: 50px;
+    margin: 50px 75px;
+    background-color: #49616590;
+    border-radius:4px;
+    padding:20px
   }
   .itemDetails{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    background-color: #496165 ;
+    border: 1px solid  #496165;
+    border-radius: 4px;
+    color: white;
+    min-width: 30%;
+    padding-left: 20px;
+    padding-right: 20px;
   }
   .itemDetails .itemPrice{
-    color: #496165;
     font-size: larger;
     padding-bottom: 10px;
+    
   }
   .btnBack{
     margin-top:20px;
     padding:5px;
   }
   .itemDetails .line{
-    border-bottom: 5px solid #496165;
+    border-bottom: 5px solid white;
     margin-top: 20px;
     margin-bottom:20px;
-    width: 90%;
+    width: 100%;
   }
-  button{
+  .addToCart, .removeFromCart{
     margin-right: 10px;
   }

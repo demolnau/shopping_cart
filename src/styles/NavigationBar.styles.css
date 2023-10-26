@@ -2,7 +2,10 @@
 .navigationBar{
     display:flex;
     justify-content: space-between;
-    background-color: #49616580;
+    background-color: #496165;
+    border: 1px solid  #496165;
+    border-radius: 4px;
+    
   }
 
   .rightNavigationBar{
@@ -18,7 +21,7 @@
  }
 
  #navigationBarItem:hover{
-  color: #7C5685;
+  color: #C0BECC;
 }
  
 .badge{

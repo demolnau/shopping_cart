@@ -8,8 +8,9 @@ const ShopPage = function({quantity}){
         <div>
             <NavigationBar quantity={quantity}></NavigationBar>
             <div className="shopPage">
-              <h1>Shop Page</h1>
+             
               <div className="shoppingContainer">
+              <h1>Shop Page</h1>
                 <div className="shoppingGrid">
                   {data.map((item) => {
                     return(
