@@ -35,7 +35,7 @@ const ShoppingCartItem = function({item, increaseCount, decreaseCount}){
         </div>
     )
 }
-const ShoppingCartPage = function({cart, increaseCount, decreaseCount}){
+const ShoppingCartPage = function({cart, quantity, increaseCount, decreaseCount}){
     const navigate = useNavigate();
     const getTotal = function(){
         var total = 0
@@ -57,7 +57,7 @@ const ShoppingCartPage = function({cart, increaseCount, decreaseCount}){
     if(cart.length==0){
         return (
             <>
-            <NavigationBar></NavigationBar>
+            <NavigationBar quantity={quantity}></NavigationBar>
             <div className="shoppingCartPage">
                 <h1>Your Cart</h1>
                 <div className="line"></div>
@@ -70,7 +70,7 @@ const ShoppingCartPage = function({cart, increaseCount, decreaseCount}){
     else{
         return(
             <>
-                <NavigationBar></NavigationBar>
+                <NavigationBar quantity={quantity}></NavigationBar>
                 <div className="shoppingCartPage">
                     <h1>Your Cart</h1>
                     <div className="line"></div>

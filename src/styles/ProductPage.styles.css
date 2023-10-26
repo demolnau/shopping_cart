@@ -11,7 +11,7 @@
     align-items: flex-start;
   }
   .itemDetails .itemPrice{
-    color: green;
+    color: #496165;
     font-size: larger;
     padding-bottom: 10px;
   }
@@ -19,4 +19,12 @@
     margin-top:20px;
     padding:5px;
   }
-  
+  .itemDetails .line{
+    border-bottom: 5px solid #496165;
+    margin-top: 20px;
+    margin-bottom:20px;
+    width: 90%;
+  }
+  button{
+    margin-right: 10px;
+  }

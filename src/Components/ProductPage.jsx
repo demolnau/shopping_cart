@@ -4,11 +4,11 @@ import NavigationBar from "./NavigationBar";
 //import { useState } from "react";
 import "../styles/ProductPage.styles.css"
 
-const ProductPage= function({item, increaseCount, decreaseCount}){
+const ProductPage= function({item, quantity, increaseCount, decreaseCount}){
   const navigate =useNavigate()
   return (
     <div className="profilePage">
-        <NavigationBar></NavigationBar>
+        <NavigationBar quantity={quantity}></NavigationBar>
         <div className="itemContainer">
     
         <div className="itemImageContainer">

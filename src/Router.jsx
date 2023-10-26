@@ -9,13 +9,16 @@ import ShoppingCartPage from "./Components/ShoppingCartPage";
 import ShopPage from "./Components/ShopPage";
 import pretendCart from "./assets/data/pretendCart";
 import uniqid from 'uniqid'
+
 const Router = function(){
   const [data]=useState(itemData)
   const [cart,setCart] = useState(pretendCart)
-  const quantity= useRef(0)
-
+  //const quantity= useRef(5)
+  const [quantity, setQuantity] = useState(5)
   useEffect(()=>{
-    quantity.current = getQuantity(cart)
+    //quantity.current = getQuantity(cart)
+    setQuantity(getQuantity(cart))
+    
   },[cart])
 
   const getQuantity = function(cart){
@@ -106,7 +109,7 @@ const Router = function(){
             return(
                 {
                     ...product,
-                    quantity: product.quantity +1
+                    quantity: product.quantity+1
                 }
             )
         }
@@ -161,7 +164,7 @@ const decreaseCount = function(item){
 }
   const routes =[{
     path:"/",
-    element:<App cart={cart}/>, 
+    element:<App quantity={quantity}/>, 
     errorElement:<ErrorPage />
   }]
   data.map((item)=>{
@@ -169,11 +172,12 @@ const decreaseCount = function(item){
       {
         path: `${item.path}`,
         Component: () => (
-          <ProductPage item={item} key={item.id} decreaseCount={()=>decreaseCountProductPage(item)} increaseCount={()=>increaseCountProductPage(item)}/>
+          <ProductPage item={item} key={item.id} quantity={quantity} decreaseCount={()=>decreaseCountProductPage(item)} increaseCount={()=>increaseCountProductPage(item)}/>
           )
       }
     )
     })
+
     routes.push(
       {
         path:"/homePage",
@@ -183,13 +187,13 @@ const decreaseCount = function(item){
     routes.push(
       {
         path:"/shoppingCartPage",
-        element:<ShoppingCartPage cart={cart} increaseCount={increaseCount} decreaseCount={decreaseCount}/>
+        element:<ShoppingCartPage cart={cart} quantity={quantity} increaseCount={increaseCount} decreaseCount={decreaseCount}/>
       }
     )
     routes.push(
       {
         path:"/shopPage",
-        element: <ShopPage />
+        element: <ShopPage quantity={quantity}/>
       }
     )
 

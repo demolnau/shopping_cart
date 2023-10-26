@@ -3,7 +3,7 @@ import "../styles/Item.styles.css"
 //import React from "react";
 const Item = function({item}){
     return (
-      <Link className="shopItem" to={item.path}>
+      <Link className="shopItem" to={item.path} id="shopItem">
         <div className="itemImageContainer">
             <img src={item.image} alt={item.name} className="itemThumb" />
         </div>

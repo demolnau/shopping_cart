@@ -2,11 +2,11 @@ import NavigationBar from "./NavigationBar";
 import itemData from "../assets/data/itemData";
 import { useState } from "react";
 import Item from "./Item";
-const ShopPage = function(){
+const ShopPage = function({quantity}){
     const [data]=useState(itemData)
     return(
         <div>
-            <NavigationBar></NavigationBar>
+            <NavigationBar quantity={quantity}></NavigationBar>
             <div className="shopPage">
               <h1>Shop Page</h1>
               <div className="shoppingContainer">

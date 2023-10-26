@@ -1,24 +1,15 @@
-.shopItem{
+#shopItem, #shopItem:visited{
     display:flex;
     flex-direction: column;
     background-color: #496165;
     padding:20px;
-  }
-
-  .itemDetails .line{
-    border-bottom: 5px solid grey;
-    margin-top: 20px;
-    width: 90%;
-  }
-  
-  .itemInfo, .itemInfo:visited{
-    color: white;
+    color:white;
     text-decoration: none;
   }
-  
-  .itemInfo:hover{
-    color: #C198B8;
-  }
+
+#shopItem:hover{
+  color: #C0BECC;
+}
   
   .itemImageContainer{
     position: relative;

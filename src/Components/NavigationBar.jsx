@@ -5,22 +5,23 @@ import "../styles/NavigationBar.styles.css"
 const NavigationBar = function({quantity}){
     return(
         <div className="navigationBar">
-            <h1> <Link className="HomePage" to="/">Mini Shopping Site</Link></h1>
+            <div className="leftNavigationBar">
+                <h1> <Link className="HomePage" to="/" id="navigationBarItem">Mini Shopping Site</Link></h1>
+            </div>
+            
             <nav className="rightNavigationBar">
-                <Link className="shopPage" to="/shopPage">Shop</Link>
-                <Link className="searchIcon" to="searchPage">
+                <Link className="shopPage" to="/shopPage" id="navigationBarItem">Shop</Link>
+                <Link className="searchIcon" to="searchPage" id="navigationBarItem">
                     <span className="material-symbols-outlined">
                         search
                     </span>
                 </Link>
-                <Link className="shoppingCartPage" to="/shoppingCartPage">
+                <Link className="shoppingCartPage" to="/shoppingCartPage" id="navigationBarItem">
                     <span className="material-symbols-outlined">
                         shopping_cart
-                        {quantity > 0 &&
-                            <span className="quantity_in_cart">
-                                {quantity}
-                            </span>
-                        }
+                    </span>
+                    <span className="badge badge-warning" id="quantity_in_cart">
+                        {quantity}
                     </span>
                 </Link>
             </nav>

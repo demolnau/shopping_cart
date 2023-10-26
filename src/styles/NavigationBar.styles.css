@@ -2,10 +2,43 @@
 .navigationBar{
     display:flex;
     justify-content: space-between;
-    background-color: rgba(0,0,0,0.5);
+    background-color: #49616580;
   }
+
   .rightNavigationBar{
     display: flex;
     align-items: center;
+    margin-right:20px;
   }
-  
+
+ #navigationBarItem, #navigationBarItem:visited{
+  margin-left:20px;
+  text-decoration: none;
+  color: white;
+ }
+
+ #navigationBarItem:hover{
+  color: #7C5685;
+}
+ 
+.badge{
+  padding-left: 9px;
+  padding-right: 9px;
+  -webkit-border-radius: 9px;
+  -moz-border-radius: 9px;
+  border-radius: 9px;
+}
+
+.label-warning[href],
+.badge-warning[href] {
+  background-color: #C198B8;
+}
+
+#quantity_in_cart{
+  font-size: 12px;
+  background: #B76F94;
+  color: #fff;
+  padding: 0 5px;
+  vertical-align: top;
+  margin-left: -10px;
+} 
